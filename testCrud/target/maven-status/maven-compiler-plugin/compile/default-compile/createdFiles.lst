@@ -1,0 +1,7 @@
+com\test\testCrud\springdemo\service\CompaniesServiceImpl.class
+com\test\testCrud\TestCrudApplication.class
+com\test\testCrud\springdemo\controller\CompaniesController.class
+com\test\testCrud\springdemo\entity\Companies.class
+com\test\testCrud\springdemo\service\CompaniesService.class
+com\test\testCrud\springdemo\dao\CompaniesDAO.class
+com\test\testCrud\springdemo\dao\CompaniesDAOImpl.class

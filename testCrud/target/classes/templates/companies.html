@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+
+
+<link href="../style.css" rel='stylesheet' >
+
+
+
+</head>
+
+
+	
+	
+	
+	
+	
+	
+<div class="container">
+    <div class="row">
+    
+    <p></p>
+    <h1>Companies Database Table</h1>
+    <p> </p><p> </p>
+    
+        <div class="col-md-10 col-md-offset">
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    <h3 class="panel-title"></h3>
+                  </div>
+                  <div class="col col-xs-6 text-right">
+                  
+                    <button type="button" class="btn btn-sm btn-primary btn-create"  
+                    value="Add Company"
+				   onclick="window.location.href='showFormForAdd'; return false;"> Create New</button>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+          
+     <table class="table table-striped table-bordered table-list"  >
+                
+                  <thead>
+                    <tr >
+                        <th><em class="fa fa-cog" ></em></th>
+                        <th >Company Name</th>
+                        <th>Headquarters</th>
+                         <th>Founded</th>
+                    </tr> 
+                  </thead>
+                  
+                       
+                
+  
+
+    <div th:each="company : ${companies}">
+                  
+                  <tbody>
+                          <tr>
+                            <td align="center">
+                            	<!-- Update link -->
+				
+                          <a  class="btn btn-default"   th:href="@{/companies/showFormForUpdate/{id}(id=${company.id})}"  > 
+                            <em class="fa fa-pencil"></em></a> 
+                             
+                             
+                   
+                             
+                              <!-- Delete link -->
+				    <a th:href="@{/companies/delete/{id}(id=${company.id})}" 
+				     onclick="if (!(confirm('Are you sure you want to delete this company?'))) return false"
+				      class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                             
+                             
+                            
+                            </td>
+                            <td ><span th:text="${company.company_name}"></span></td>
+                            <td>  <span th:text="${company.city}"/>    </td>
+                            <td>  <span th:text="${company.founded}"/> </td>
+                          </tr>
+                        </tbody>
+                </table>
+            
+              </div>
+          
+            </div>
+
+</div></div></div>
+
+
+</html>
